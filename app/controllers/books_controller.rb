@@ -67,7 +67,7 @@ private
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :google_id, :openlibrary_id, :isbn)
+    params.require(:book).permit(:title, :author, :floor, :google_id, :openlibrary_id, :isbn)
   end
 
   def assign_metadata_to_book(book)

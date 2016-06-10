@@ -6,7 +6,7 @@
     <h2>by <%= @book.author %></h2>
   </div>
 
-  <p><%= pluralize @book.copies.count, "copy" %></p>
+  <p><%= pluralize @book.copies.count, "copy" %><% if @book.floor %> available on floor <%= @book.floor %><% end %></p>
 
   <ul class="copies">
     <%= render :partial => "copies/copy", :collection => @book.copies.ordered_by_availability, locals: { link_to_copy: true } %>
